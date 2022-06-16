@@ -22,7 +22,7 @@ Route::get('/', function () {
 //});
 
 
-Route::get('hello/{id?}/{pass?}', 'HelloController@index');
 
+Route::get('hello', 'JissyuController@index');
 
 
