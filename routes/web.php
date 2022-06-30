@@ -35,3 +35,10 @@ Route::get('jissyu4', 'jissyu3_2Controller@index');
 Route::post('jissyu4', 'jissyu3_2Controller@index');
 //jissyu3_3
 Route::get('jissyu5', 'jissyu3_3Controller@index');
+//Chapter3_2
+Route::get('Chapter3_2', 'Chapter3_2Controller@index');
+//Ohara
+Route::get('Ohara','OharaController@index');
+//jissyu
+Route::get('jissyu6', 'Jissyu4_1Controlle@index');
+Route::post('jissyu6', 'Jissyu4_1Controlle@post');

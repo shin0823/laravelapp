@@ -1,0 +1,11 @@
+@startuml
+actor ユーザー as y
+boundary ブラウザ as b
+control web.php as w
+control JissyuController as j
+
+y -> b:該当ページをリクエスト[/jissyu2]
+b -> w:GET[?jissyu2]
+w -> j:@index
+j -> b
+@enduml
