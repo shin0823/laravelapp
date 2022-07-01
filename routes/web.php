@@ -24,6 +24,9 @@ use App\Http\Middleware\HelloMiddleware;
 
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
+//--------データーの挿入---------//
+Route::get('hello/add', 'HelloController@add');
+Route::post('hello/add', 'HelloController@create');
 
 //実習用
 Route::get('jissyu2', 'JissyuController@index');
