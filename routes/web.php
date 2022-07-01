@@ -42,3 +42,7 @@ Route::get('Ohara','OharaController@index');
 //jissyu
 Route::get('jissyu6', 'Jissyu4_1Controlle@index');
 Route::post('jissyu6', 'Jissyu4_1Controlle@post');
+//jissyu5_1
+Route::get('jissyu7', 'Jissyu5_1Controlle@index');
+Route::get('jissyu7', 'Jissyu5_1Controlle@show');
+
