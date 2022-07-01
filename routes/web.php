@@ -27,9 +27,12 @@ Route::post('hello', 'HelloController@post');
 //--------データーの挿入---------//
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
-//--------データーの挿入---------//
+//--------データーの更新---------//
 Route::get('hello/edit', 'HelloController@edit');
 Route::post('hello/edit', 'HelloController@update');
+//-------データーの削除----------//
+Route::get('hello/del', 'HelloController@del');
+Route::post('hello/del', 'HelloController@remove');
 
 //実習用
 Route::get('jissyu2', 'JissyuController@index');
