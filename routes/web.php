@@ -36,6 +36,8 @@ Route::post('hello/del', 'HelloController@remove');
 
 Route::get('hello/show', 'HelloController@show');
 
+Route::get('person', 'PersonController@index');
+
 //実習用
 Route::get('jissyu2', 'JissyuController@index');
 //jissyu3_1
