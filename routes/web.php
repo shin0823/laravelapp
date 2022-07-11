@@ -63,6 +63,12 @@ Route::get('hello/rest', 'HelloController@rest');
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_put');
 
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
+
+    Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
+
 //実習用
 Route::get('jissyu2', 'JissyuController@index');
 //jissyu3_1
@@ -73,3 +79,7 @@ Route::get('jissyu4', 'jissyu3_2Controller@index');
 Route::post('jissyu4', 'jissyu3_2Controller@index');
 //jissyu3_3
 Route::get('jissyu5', 'jissyu3_3Controller@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
