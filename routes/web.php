@@ -22,7 +22,7 @@ Route::get('/', function () {
 //});
 use App\Http\Middleware\HelloMiddleware;
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')->middleware('auth');
 Route::post('hello', 'HelloController@post');
 //--------データーの挿入---------//
 Route::get('hello/add', 'HelloController@add');
@@ -56,6 +56,18 @@ Route::get('board', 'BoardController@index');
 Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 
+Route::resource('rest', 'RestappController');
+
+Route::get('hello/rest', 'HelloController@rest');
+
+Route::get('hello/session', 'HelloController@ses_get');
+Route::post('hello/session', 'HelloController@ses_put');
+
+Route::get('hello', 'HelloController@index')
+    ->middleware('auth');
+
+    Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
 //実習用
 Route::get('jissyu2', 'JissyuController@index');
@@ -67,6 +79,7 @@ Route::get('jissyu4', 'jissyu3_2Controller@index');
 Route::post('jissyu4', 'jissyu3_2Controller@index');
 //jissyu3_3
 Route::get('jissyu5', 'jissyu3_3Controller@index');
+<<<<<<< HEAD
 //Chapter3_2
 Route::get('Chapter3_2', 'Chapter3_2Controller@index');
 //Ohara
@@ -91,3 +104,9 @@ Route::post('jissyu14/update', 'Jissyu6_3Controller@update');
 Route::get('jissyu14/del', 'Jissyu6_3Controller@del');
 Route::post('jissyu14/remove', 'Jissyu6_3Controller@remove');
 
+=======
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> origin/text
