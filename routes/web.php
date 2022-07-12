@@ -22,7 +22,7 @@ Route::get('/', function () {
 //});
 use App\Http\Middleware\HelloMiddleware;
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')->middleware('auth');
 Route::post('hello', 'HelloController@post');
 //--------データーの挿入---------//
 Route::get('hello/add', 'HelloController@add');
