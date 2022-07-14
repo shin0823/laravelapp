@@ -1,0 +1,22 @@
+@startuml
+actor ユーザ as y
+boundary ブラウザ as b
+control web.php as w 
+control Jissyu6_1Controller as j
+entity Person as p
+boundary index.blade.php as i
+boundary show.blade.php as s
+
+y -> b:該当ページをリクエスト[/jissyu13]
+b -> w:GET[/jissyu13]
+w -> j:@index
+j -> p:all()
+p --> j
+j -> i
+y -> b:検索ボタンを押下
+b -> w:GET[/jissyu13/find]
+w -> j:@find
+j -> p:where()->first()
+p --> j
+j -> s
+@enduml
