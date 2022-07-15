@@ -1,0 +1,22 @@
+@startuml
+actor ユーザ as y
+boundary ブラウザ as b
+control web.php as w 
+control Kouka2_1Controller as k
+entity Restdata as r
+boundary index.blade.php as i
+boundary show.blade.php as s
+
+y -> b:該当ページをリクエスト[/kouka2_1]
+b -> w:GET[/kouka2_1]
+w -> k:@index
+k -> r:all()
+r --> k
+k -> i
+y -> b:検索ボタンを押下
+b -> w:GET[/kouka2_1/find]
+w -> k:@find
+k -> r:where()->first()
+r --> k
+k -> s
+@enduml

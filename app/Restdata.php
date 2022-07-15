@@ -7,7 +7,7 @@ class Restdata extends Model
 {
    protected $table = 'restdata';
    protected $guarded = array('id');
-  
+
    public static $rules = array(
        'message' => 'required',
        'url' => 'required'
@@ -15,8 +15,9 @@ class Restdata extends Model
 
    public function getData()
    {
-       return $this->id . ':' . $this->mssage 
+       return $this->id . ':' . $this->mssage
           . '(' . $this->url . ')';
    }
 
 }
+
